@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Peakline Roofing provides dependable residential and commercial roofing in Calgary, Alberta. Inspections, repairs, replacements and maintenance.">
+	<title>Peakline Roofing | Calgary Roofing, Built for the Weather</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--ink: #1e2827;
+			--ink-soft: #51615e;
+			--paper: #f5f5ef;
+			--white: #ffffff;
+			--line: #d9dfd9;
+			--orange: #d9673b;
+			--orange-dark: #b84f2b;
+			--sage: #dfe8df;
+			--moss: #34514b;
+			--night: #172522;
+			--shadow: 0 20px 60px rgba(31, 45, 41, .12);
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; line-height: 1.55; }
+		body.no-scroll { overflow: hidden; }
+		a { color: inherit; text-decoration: none; }
+		button, input, textarea { font: inherit; }
+		button { cursor: pointer; }
+		img { display: block; max-width: 100%; }
+		.container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+		.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; color: var(--orange-dark); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+		.eyebrow::before { width: 28px; height: 2px; background: currentColor; content: ''; }
+		h1, h2, h3, p { margin-top: 0; }
+		h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -.04em; line-height: 1.03; }
+		h1 { max-width: 720px; margin-bottom: 24px; color: var(--white); font-size: clamp(3.1rem, 7vw, 6.7rem); }
+		h2 { margin-bottom: 22px; font-size: clamp(2.4rem, 4.8vw, 4.7rem); }
+		h3 { margin-bottom: 12px; font-size: 1.45rem; }
+		.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 22px; border: 1px solid transparent; border-radius: 3px; background: var(--orange); color: var(--white); font-size: 14px; font-weight: 700; transition: background .2s, transform .2s; }
+		.button:hover { background: var(--orange-dark); transform: translateY(-2px); }
+		.button--light { background: var(--white); color: var(--ink); }
+		.button--light:hover { background: var(--sage); }
+		.button--outline { border-color: rgba(255,255,255,.5); background: transparent; color: var(--white); }
+		.button--outline:hover { border-color: var(--white); background: var(--white); color: var(--ink); }
+
+		.topbar { background: var(--night); color: #c7d3cd; font-size: 12px; }
+		.topbar .container { display: flex; justify-content: space-between; align-items: center; min-height: 36px; }
+		.topbar p { margin: 0; }
+		.topbar a { color: var(--white); font-weight: 700; }
+		.topbar-right { display: flex; gap: 22px; }
+		header { position: absolute; z-index: 3; top: 36px; right: 0; left: 0; color: var(--white); }
+		header .container { display: flex; justify-content: space-between; align-items: center; min-height: 88px; border-bottom: 1px solid rgba(255,255,255,.25); }
+		.logo { display: flex; align-items: center; gap: 11px; font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -.04em; }
+		.logo-mark { display: grid; place-items: center; width: 37px; height: 37px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; color: var(--white); font-size: 15px; }
+		nav { display: flex; align-items: center; gap: 32px; font-size: 14px; font-weight: 600; }
+		nav a { opacity: .85; transition: opacity .2s; }
+		nav a:hover { opacity: 1; }
+		.nav-call { padding: 10px 15px; border: 1px solid rgba(255,255,255,.55); border-radius: 2px; opacity: 1; }
+		.menu-toggle { display: none; border: 0; background: transparent; color: var(--white); font-size: 26px; }
+
+		.hero { position: relative; display: flex; align-items: flex-end; min-height: 790px; padding: 190px 0 86px; overflow: hidden; background: var(--night); }
+		.hero::before { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(245, 245, 239, .9) 0%, rgba(245, 245, 239, .62) 46%, rgba(11, 22, 20, .12) 100%); content: ''; }
+		.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .9; }
+		.hero-content { position: relative; z-index: 1; color: #000; }
+		.hero-content h1, .hero-content .eyebrow { color: #000; }
+		.hero-copy { max-width: 560px; color: #000; font-size: 18px; }
+		.hero-actions { display: flex; gap: 12px; margin-top: 35px; }
+		.hero-note { display: flex; align-items: center; gap: 9px; margin-top: 62px; color: #000; font-size: 13px; }
+		.hero-note span { display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid var(--orange); border-radius: 50%; color: var(--orange); font-size: 12px; }
+		.hero-stats { position: absolute; right: 0; bottom: 72px; display: grid; grid-template-columns: repeat(3, 1fr); width: min(475px, 42%); padding: 22px 0 0 28px; border-top: 1px solid rgba(255,255,255,.4); color: var(--white); }
+		.hero-stats strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 29px; }
+		.hero-stats span { color: #c8d3cb; font-size: 12px; }
+
+		.intro { padding: 120px 0 110px; }
+		.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+		.intro h2 { max-width: 590px; }
+		.intro-text { max-width: 450px; color: var(--ink-soft); font-size: 17px; }
+		.intro-text p { margin-bottom: 24px; }
+		.text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--moss); font-size: 14px; font-weight: 700; }
+		.text-link::after { content: '→'; color: var(--orange); font-size: 20px; }
+
+		.services { padding: 95px 0 112px; background: var(--sage); }
+		.section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 48px; }
+		.section-head h2 { max-width: 500px; margin-bottom: 0; }
+		.section-head > p { max-width: 340px; margin: 0; color: var(--ink-soft); }
+		.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #bccbc0; }
+		.service { padding: 32px 32px 25px 0; border-bottom: 1px solid #bccbc0; }
+		.service + .service { padding-left: 32px; border-left: 1px solid #bccbc0; }
+		.service-number { margin-bottom: 55px; color: var(--orange-dark); font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; }
+		.service p { margin-bottom: 0; color: var(--ink-soft); font-size: 14px; }
+
+		.projects { padding: 120px 0; background: var(--paper); color: #000; }
+		.projects .eyebrow, .projects .section-head > p { color: #000; }
+		.project-grid { display: grid; grid-template-columns: 1.13fr .87fr; grid-template-rows: 255px 255px; gap: 16px; }
+		.project { position: relative; overflow: hidden; background: #b8c3bd; }
+		.project:first-child { grid-row: span 2; }
+		.project img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+		.project:hover img { transform: scale(1.04); }
+		.project-caption { position: absolute; right: 14px; bottom: 14px; left: 14px; display: flex; justify-content: space-between; align-items: center; padding: 13px 15px; background: rgba(23,37,34,.88); color: var(--white); font-size: 13px; }
+		.project-caption span { color: #cbd4cd; font-size: 11px; }
+		.project button { border: 0; background: transparent; color: var(--orange); font-size: 18px; }
+
+		.process { padding: 115px 0; background: var(--night); color: var(--white); }
+		.process .eyebrow { color: #e68157; }
+		.process h2 { max-width: 530px; }
+		.process-intro { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 64px; }
+		.process-intro p { max-width: 360px; margin: 0; color: #b8c8bf; }
+		.steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #4b6159; }
+		.step { padding: 28px 24px 0 0; }
+		.step + .step { padding-left: 24px; border-left: 1px solid #4b6159; }
+		.step-number { color: var(--orange); font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; }
+		.step h3 { margin-top: 45px; color: var(--white); font-size: 20px; }
+		.step p { margin-bottom: 0; color: #b8c8bf; font-size: 14px; }
+
+		.quote { padding: 120px 0; background: #e7e9e1; }
+		.quote-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 100px; align-items: start; }
+		.quote-copy p { max-width: 370px; color: var(--ink-soft); }
+		.contact-list { display: grid; gap: 15px; margin-top: 40px; font-size: 14px; }
+		.contact-list div { display: flex; gap: 14px; align-items: center; }
+		.contact-list strong { color: var(--orange-dark); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+		.quote-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 34px; background: var(--white); box-shadow: var(--shadow); }
+		.field { display: flex; flex-direction: column; gap: 8px; }
+		.field.full { grid-column: 1 / -1; }
+		.field label { color: var(--ink-soft); font-size: 12px; font-weight: 700; }
+		.field input, .field textarea, .field select { width: 100%; border: 1px solid var(--line); border-radius: 0; padding: 13px 14px; outline-color: var(--orange); background: #fbfcf9; color: var(--ink); }
+		.field textarea { min-height: 105px; resize: vertical; }
+		.quote-form .button { width: 100%; margin-top: 5px; border: 0; }
+		.form-status { grid-column: 1 / -1; display: none; margin: 0; color: var(--moss); font-size: 13px; }
+		.form-status.show { display: block; }
+
+		footer { padding: 38px 0 28px; background: var(--night); color: #afc0b6; font-size: 12px; }
+		.footer-main { display: flex; justify-content: space-between; align-items: center; padding-bottom: 35px; border-bottom: 1px solid #3b5049; }
+		footer .logo { color: var(--white); font-size: 18px; }
+		footer .logo-mark { width: 30px; height: 30px; font-size: 12px; }
+		footer nav { gap: 22px; font-size: 12px; }
+		.footer-bottom { display: flex; justify-content: space-between; padding-top: 22px; }
+
+		.lightbox { position: fixed; z-index: 10; inset: 0; display: none; place-items: center; padding: 30px; background: rgba(10, 20, 18, .92); }
+		.lightbox.open { display: grid; }
+		.lightbox img { max-width: min(1000px, 94vw); max-height: 84vh; object-fit: contain; }
+		.lightbox-close { position: absolute; top: 20px; right: 26px; border: 0; background: transparent; color: var(--white); font-size: 30px; }
+
+		@media (max-width: 800px) {
+			.container { width: min(100% - 32px, 590px); }
+			.topbar-right { display: none; }
+			header { top: 36px; }
+			header .container { min-height: 72px; }
+			nav { position: fixed; top: 108px; right: 16px; left: 16px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 12px; background: var(--night); box-shadow: var(--shadow); }
+			nav.open { display: flex; }
+			nav a { padding: 14px; }
+			.nav-call { border: 0; }
+			.menu-toggle { display: block; }
+			.hero { min-height: 700px; padding: 170px 0 46px; }
+			.hero-stats { position: relative; right: auto; bottom: auto; width: 100%; margin-top: 60px; padding-left: 0; }
+			.intro, .projects, .process, .quote { padding: 78px 0; }
+			.intro-grid, .quote-grid { grid-template-columns: 1fr; gap: 38px; }
+			.section-head, .process-intro { display: block; }
+			.section-head > p, .process-intro p { margin-top: 20px; }
+			.service-grid, .steps { grid-template-columns: 1fr 1fr; }
+			.service:nth-child(3), .step:nth-child(3) { border-top: 1px solid #bccbc0; }
+			.service:nth-child(odd), .step:nth-child(odd) { padding-left: 0; border-left: 0; }
+			.service:nth-child(even), .step:nth-child(even) { padding-left: 24px; border-left: 1px solid #bccbc0; }
+			.project-grid { grid-template-rows: 220px 220px 220px; }
+			.project:first-child { grid-row: auto; grid-column: 1 / -1; }
+			.quote-form { padding: 23px; }
+		}
+		@media (max-width: 490px) {
+			h1 { font-size: 3.2rem; }
+			.hero-actions { flex-direction: column; align-items: stretch; }
+			.service-grid, .steps { grid-template-columns: 1fr; }
+			.service, .service + .service, .step, .step + .step { padding: 26px 0; border-left: 0; }
+			.service + .service, .step + .step { border-top: 1px solid #bccbc0; }
+			.service-number { margin-bottom: 27px; }
+			.project-grid { display: flex; flex-direction: column; }
+			.project { height: 245px; }
+			.quote-form { grid-template-columns: 1fr; }
+			.field.full, .form-status { grid-column: auto; }
+			.footer-main, .footer-bottom { align-items: flex-start; flex-direction: column; gap: 25px; }
+			footer nav { display: flex; padding: 0; background: none; box-shadow: none; }
+		}
+		/* New visual direction: bright architectural editorial */
+		:root {
+			--ink: #132633;
+			--ink-soft: #5d6d73;
+			--paper: #f5f2ec;
+			--white: #ffffff;
+			--line: #d9dfdf;
+			--orange: #e86b4d;
+			--orange-dark: #be4e37;
+			--sage: #e6eef0;
+			--moss: #1b5968;
+			--night: #122b39;
+			--shadow: 0 24px 70px rgba(19, 38, 51, .13);
+		}
+
+		body { background: var(--paper); }
+		.topbar { background: var(--night); }
+		header { color: var(--ink); }
+		header .container { border-bottom-color: rgba(19, 38, 51, .18); }
+		.logo-mark { border-color: var(--ink); color: var(--ink); }
+		header nav { padding: 8px 10px; border-radius: 999px; background: rgba(255, 255, 255, .9); box-shadow: 0 8px 24px rgba(19, 38, 51, .12); }
+		header nav a { color: var(--ink); }
+		nav a { opacity: .78; }
+		.nav-call { border-color: rgba(19, 38, 51, .3); }
+		.menu-toggle { color: var(--ink); }
+		.hero { min-height: 735px; align-items: center; padding: 160px 0 95px; background: var(--paper); }
+		.hero::before { top: 0; right: 0; bottom: 0; left: 50%; background: linear-gradient(90deg, var(--paper) 0%, rgba(245, 242, 236, .15) 24%, rgba(18, 43, 57, .1) 100%); }
+		.hero-image { top: 0; right: 0; bottom: 0; left: 50%; width: 50%; height: 100%; opacity: 1; object-position: center; }
+		.hero-content { width: min(560px, calc(50% - 48px)); margin-left: max(24px, calc((100% - 1180px) / 2)); padding-right: 0; color: var(--ink); }
+		.hero-content h1, .hero-content .eyebrow, .hero-copy, .hero-note { color: var(--ink); }
+		h1 { width: 100%; max-width: 520px; font-size: clamp(2.7rem, 4.2vw, 4.5rem); overflow-wrap: break-word; }
+		.hero-copy { max-width: 480px; font-size: 17px; }
+		.hero-actions { margin-top: 30px; }
+		.button { border-radius: 999px; }
+		.button--outline { border-color: var(--ink); color: var(--ink); }
+		.button--outline:hover { border-color: var(--ink); background: var(--ink); color: var(--white); }
+		.hero-note { margin-top: 34px; }
+		.hero-stats { position: relative; right: auto; bottom: auto; left: auto; width: 100%; column-gap: 18px; margin-top: 42px; padding: 20px 0 0; border-top-color: rgba(19, 38, 51, .28); color: var(--ink); }
+		.hero-stats > div { min-width: 0; }
+		.hero-stats span { color: var(--ink-soft); }
+		.intro { padding: 140px 0 125px; }
+		.intro-grid { gap: 110px; }
+		.text-link { color: var(--moss); }
+		.services { background: var(--sage); }
+		.section-head { margin-bottom: 42px; }
+		.service-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; border-top: 0; }
+		.service, .service + .service { min-height: 260px; padding: 27px 24px; border: 1px solid rgba(27, 89, 104, .16); border-radius: 12px; background: rgba(255,255,255,.7); }
+		.service + .service { border-left: 1px solid rgba(27, 89, 104, .16); }
+		.service-number { margin-bottom: 48px; }
+		.projects { background: var(--white); }
+		.project-grid { gap: 18px; }
+		.project { border-radius: 12px; }
+		.project-caption { right: 12px; bottom: 12px; left: 12px; border-radius: 8px; }
+		.process { background: var(--night); }
+		.step + .step { border-left-color: rgba(255,255,255,.2); }
+		.quote { background: var(--paper); }
+		.quote-form { border-radius: 16px; }
+		.field input, .field textarea, .field select { border-radius: 7px; }
+		footer { background: var(--night); }
+
+		@media (max-width: 800px) {
+			header { color: var(--white); }
+			header .container { border-bottom-color: rgba(255,255,255,.25); }
+			.logo-mark, .menu-toggle { border-color: rgba(255,255,255,.7); color: var(--white); }
+			nav { background: var(--night); }
+			header nav { padding: 12px; border-radius: 0; background: var(--night); }
+			header nav a { color: var(--white); }
+			.hero { min-height: 790px; align-items: flex-end; padding: 185px 0 48px; }
+			.hero::before { top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(180deg, rgba(18, 43, 57, .05) 24%, rgba(245, 242, 236, .94) 62%, var(--paper) 100%); }
+			.hero-image { top: 0; right: 0; bottom: auto; left: 0; width: 100%; height: 58%; }
+			.hero-content { width: 100%; margin-left: 0; padding-right: 0; }
+			h1 { max-width: 100%; }
+			.hero-stats { position: relative; right: auto; bottom: auto; left: auto; width: 100%; margin-top: 46px; }
+			.service-grid { grid-template-columns: 1fr 1fr; }
+			.service, .service + .service { min-height: 225px; padding: 24px 20px; }
+		}
+		@media (max-width: 490px) {
+			.hero { min-height: 770px; }
+			.hero-image { height: 52%; }
+			.service-grid { grid-template-columns: 1fr; }
+			.service, .service + .service { min-height: 0; }
+		}
+	</style>
+</head>
+<body>
+	<div class="topbar"><div class="container"><p>Roofing for Calgary homes, built for the long haul.</p><div class="topbar-right"><span>Mon–Sat · 8:00–18:00</span><a href="tel:+14035550198">(403) 555-0198</a></div></div></div>
+	<header>
+		<div class="container">
+			<a class="logo" href="#top" aria-label="Peakline Roofing home"><span class="logo-mark">P</span> Peakline Roofing</a>
+			<button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+			<nav aria-label="Main navigation">
+				<a href="#services">Services</a><a href="#projects">Our work</a><a href="#process">Process</a><a href="#quote">Contact</a><a class="nav-call" href="tel:+14035550198">Call (403) 555-0198</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero">
+			<img class="hero-image" src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=2200&q=85" alt="Modern Calgary home with a new dark roof">
+			<div class="container hero-content">
+				<p class="eyebrow">Calgary roofing specialists</p>
+				<h1>A roof that holds its own against Alberta.</h1>
+				<p class="hero-copy">Thoughtful roofing work for homes and businesses across Calgary. Clear advice, careful installation and a finish you can count on.</p>
+				<div class="hero-actions"><a class="button" href="#quote">Get a free estimate <span>↗</span></a><a class="button button--outline" href="#projects">See our work</a></div>
+				<p class="hero-note"><span>✓</span> No-pressure inspections · Straightforward quotes</p>
+				<div class="hero-stats"><div><strong>15+</strong><span>years in Calgary</span></div><div><strong>1,200</strong><span>roofs completed</span></div><div><strong>5 yr</strong><span>workmanship care</span></div></div>
+			</div>
+		</section>
+
+		<section class="intro"><div class="container intro-grid"><div><p class="eyebrow">The Peakline difference</p><h2>Good roofing is quiet. It just does its job.</h2></div><div class="intro-text"><p>Calgary weather does not wait for a convenient time. We make sure your roof is ready for the heat, hail, snow and chinooks that come with living here.</p><p>From a focused repair to a full replacement, our crew keeps the process tidy, transparent and built around your property.</p><a class="text-link" href="#quote">Talk to our team</a></div></div></section>
+
+		<section class="services" id="services"><div class="container"><div class="section-head"><div><p class="eyebrow">What we do</p><h2>One reliable crew. Every roofing need.</h2></div><p>We bring the same care to a small repair as we do to a full residential or commercial roof.</p></div><div class="service-grid"><article class="service"><div class="service-number">01 / 04</div><h3>Roof replacement</h3><p>New shingles, ventilation and flashing installed as a complete system, not a quick cover-up.</p></article><article class="service"><div class="service-number">02 / 04</div><h3>Roof repairs</h3><p>Leaks, damaged shingles and storm wear diagnosed properly and repaired before they spread.</p></article><article class="service"><div class="service-number">03 / 04</div><h3>Hail & storm work</h3><p>Clear documentation and practical guidance after Calgary’s rougher weather rolls through.</p></article><article class="service"><div class="service-number">04 / 04</div><h3>Maintenance plans</h3><p>Seasonal inspections that catch small issues early and help your roof last longer.</p></article></div></div></section>
+
+		<section class="projects" id="projects"><div class="container"><div class="section-head"><div><p class="eyebrow">Selected projects</p><h2>Work we are proud to leave behind.</h2></div><p>Every roof is different. These are a few recent Calgary-area transformations.</p></div><div class="project-grid"><figure class="project"><img src="assets/roofing/calgary-roofing-team.jpeg" alt="Calgary roofing crew installing shingles on a roof" loading="lazy"><figcaption class="project-caption"><span>Rooftop transformation</span><button type="button" aria-label="Open project photo">↗</button></figcaption></figure><figure class="project"><img src="assets/roofing/roof-installation.jpg" alt="Roofing contractor installing new shingles on a residential roof" loading="lazy"><figcaption class="project-caption"><span>Bridlewood · Full replacement</span><button type="button" aria-label="Open project photo">↗</button></figcaption></figure><figure class="project"><img src="assets/roofing/finished-shingles.jpg" alt="Freshly installed architectural shingles on a completed roof" loading="lazy"><figcaption class="project-caption"><span>Altadore · Architectural shingles</span><button type="button" aria-label="Open project photo">↗</button></figcaption></figure></div></div></section>
+
+		<section class="process" id="process"><div class="container"><div class="process-intro"><div><p class="eyebrow">How it works</p><h2>Clear from the first knock to the last sweep.</h2></div><p>No jargon, no surprise invoices and no leaving your property messier than we found it.</p></div><div class="steps"><article class="step"><div class="step-number">01</div><h3>We take a look</h3><p>A focused inspection to understand the roof and what it actually needs.</p></article><article class="step"><div class="step-number">02</div><h3>We make a plan</h3><p>You get a clear scope of work, material options and a detailed quote.</p></article><article class="step"><div class="step-number">03</div><h3>We build it right</h3><p>Our crew arrives prepared, works carefully and keeps you in the loop.</p></article><article class="step"><div class="step-number">04</div><h3>We leave it better</h3><p>Final walkthrough, thorough cleanup and care guidance for your new roof.</p></article></div></div></section>
+
+		<section class="quote" id="quote"><div class="container quote-grid"><div class="quote-copy"><p class="eyebrow">Start a conversation</p><h2>Let’s get your roof sorted.</h2><p>Tell us a little about your project. We will get back to you within one business day to arrange a no-pressure estimate.</p><div class="contact-list"><div><strong>Call</strong><a href="tel:+14035550198">(403) 555-0198</a></div><div><strong>Email</strong><a href="mailto:hello@peaklineroofing.ca">hello@peaklineroofing.ca</a></div><div><strong>Area</strong><span>Calgary & surrounding communities</span></div></div></div><form class="quote-form"><div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Jane Smith" required></div><div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" placeholder="(403) 555-0198" required></div><div class="field"><label for="service">I need help with</label><select id="service" name="service"><option>Roof replacement</option><option>Roof repair</option><option>Hail or storm damage</option><option>Maintenance inspection</option></select></div><div class="field"><label for="address">Property address</label><input id="address" name="address" type="text" placeholder="Calgary, AB"></div><div class="field full"><label for="message">Tell us about the project</label><textarea id="message" name="message" placeholder="A few details about your roof, timeline or concerns..."></textarea></div><div class="field full"><button class="button" type="submit">Request my free estimate <span>↗</span></button></div><p class="form-status" role="status">Thanks — your request is on its way. We will be in touch shortly.</p></form></div></section>
+	</main>
+
+	<footer><div class="container"><div class="footer-main"><a class="logo" href="#top"><span class="logo-mark">P</span> Peakline Roofing</a><nav aria-label="Footer navigation"><a href="#services">Services</a><a href="#projects">Our work</a><a href="#quote">Contact</a></nav></div><div class="footer-bottom"><span>© 2024 Peakline Roofing. Calgary, Alberta.</span><span>Roofing with a level head.</span></div></div></footer>
+	<div class="lightbox" role="dialog" aria-modal="true" aria-label="Project image"><button class="lightbox-close" type="button" aria-label="Close image">×</button><img src="" alt=""></div>
+
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const nav = document.querySelector('header nav');
+		menuButton.addEventListener('click', () => {
+			const isOpen = nav.classList.toggle('open');
+			menuButton.setAttribute('aria-expanded', isOpen);
+			menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+		});
+		nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => nav.classList.remove('open')));
+
+		const lightbox = document.querySelector('.lightbox');
+		const lightboxImage = lightbox.querySelector('img');
+		document.querySelectorAll('.project').forEach((project) => project.addEventListener('click', (event) => {
+			if (event.target.tagName === 'BUTTON' || event.currentTarget) {
+				lightboxImage.src = project.querySelector('img').src;
+				lightboxImage.alt = project.querySelector('img').alt;
+				lightbox.classList.add('open');
+				document.body.classList.add('no-scroll');
+			}
+		}));
+		const closeLightbox = () => { lightbox.classList.remove('open'); document.body.classList.remove('no-scroll'); };
+		lightbox.addEventListener('click', (event) => { if (event.target === lightbox || event.target.classList.contains('lightbox-close')) closeLightbox(); });
+		document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeLightbox(); });
+
+		document.querySelector('.quote-form').addEventListener('submit', (event) => {
+			event.preventDefault();
+			event.currentTarget.querySelector('.form-status').classList.add('show');
+			event.currentTarget.reset();
+		});
+	</script>
+</body>
+</html>
