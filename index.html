@@ -595,12 +595,14 @@
 		menuButton.addEventListener('click', () => {
 			const isOpen = nav.classList.toggle('open');
 			menuButton.classList.toggle('open', isOpen);
+			menuButton.textContent = isOpen ? '✕' : '☰';
 			menuButton.setAttribute('aria-expanded', isOpen);
 			menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 		});
 		nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
 			nav.classList.remove('open');
 			menuButton.classList.remove('open');
+			menuButton.textContent = '☰';
 			menuButton.setAttribute('aria-expanded', 'false');
 			menuButton.setAttribute('aria-label', 'Open menu');
 		}));
